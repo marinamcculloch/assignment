@@ -1,0 +1,6 @@
+ponger:
+  url: https://ponger:8043
+  # If uncommented, acceptCert will add
+  # the certificates listed in the file to
+  # the list of accepted certificates
+  acceptCert: /etc/ssl/certs/server.crt

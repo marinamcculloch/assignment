@@ -1,0 +1,11 @@
+service:
+  protocol: https
+  tlsCertificate: /etc/ssl/certs/server.crt
+  tlsPrivateKey: /etc/ssl/private/server.key
+  port: 8043
+
+metrics:
+  port: 2112
+  endpoint: "/metrics"
+
+  

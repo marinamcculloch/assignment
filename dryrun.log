@@ -1,0 +1,20 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/marinamcculloch/Downloads/personal_coding'
+export PROJECT=pinger && \
+		docker run --rm -t -v "/Users/marinamcculloch/Downloads/personal_coding/${PROJECT}":/src -w /src \
+		golang:1.11 sh -c "\
+			CGO_ENABLED=0 \
+			GOOS= \
+			GOARCH= \
+			go build -a --installsuffix cgo --ldflags="-s" -o ${PROJECT}/${PROJECT}"
+ 
+export PROJECT=ponger && \
+		docker run --rm -t -v "/Users/marinamcculloch/Downloads/personal_coding/${PROJECT}":/src -w /src \
+		golang:1.11 sh -c "\
+			CGO_ENABLED=0 \
+			GOOS= \
+			GOARCH= \
+			go build -a --installsuffix cgo --ldflags="-s" -o ${PROJECT}/${PROJECT}"
+ 
+make: Leaving directory `/Users/marinamcculloch/Downloads/personal_coding'
+ 

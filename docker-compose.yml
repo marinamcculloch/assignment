@@ -1,0 +1,20 @@
+#version: "3.9"  # optional since v1.27.0
+services:
+  ponger: 
+    build:
+      dockerfile: Dockerfile
+      context: ponger
+    container_name: ponger 
+    ports:
+      - "443:443"
+  pinger:
+    build: 
+      dockerfile: Dockerfile
+      context: pinger
+    container_name: pinger
+    ports:
+      - "8043:443"
+    depends_on: 
+        - ponger 
+  
+    
